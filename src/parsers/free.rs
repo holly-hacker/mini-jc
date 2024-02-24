@@ -1,6 +1,6 @@
 use std::io::Read;
 
-/// the linux `free` command
+/// Linux free, to display the amount of free and unused memory
 #[derive(argh::FromArgs)]
 #[argh(subcommand, name = "free")]
 pub struct FreeCommand {}
@@ -18,7 +18,7 @@ impl FreeCommand {
     }
 }
 
-#[derive(serde::Serialize, Default, Debug)]
+#[derive(serde::Serialize, Default)]
 pub struct FreeLine<'input> {
     pub r#type: &'input str,
     pub total: u64,

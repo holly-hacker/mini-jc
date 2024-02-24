@@ -19,20 +19,31 @@ Run `cargo install --git https://github.com/holly-hacker/mini-jc`.
 ## Differences from `jc`
 
 - `mini-jc` is a single, statically linked executable so it is fairly to install
-- `mini-jc` executes magnitudes faster than `jc`, due to not having to start up a runtime
-- `mini-jc` supports way fewer parsers than `jc`. I will likely only add support for tools I use myself.
+- `mini-jc` executes magnitudes faster due to not having to start up a runtime
+- `mini-jc` supports way fewer parsers. I will likely only add support for tools I use myself.
+- `mini-jc` will convert "human-readable" sizes to absolute values
+- `mini-jc` tries to copy `jc`'s output naming, but doesn't do so everywhere
 
 ## Supported parsers
 
-- `free`: mostly matches `jc`, but will correctly parse `-h`
+- `free`: matches `jc`
+- `df`: matches `jc`, property names have being changed to be more consistent
 
 ## Performance
 
 <!--
-hyperfine --input test-cases/free/no-args.txt "jc --free" "target/release/mini-jc free" --export-markdown out.md && cat out.md && rm out.md
+cargo build --release
+
+hyperfine -N --warmup 100 --input test-cases/free/no-args.txt "jc --free" "target/release/mini-jc free" --export-markdown out.md && cat out.md && rm out.md
+
 -->
 
 | Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `jc --free` | 45.8 ± 1.5 | 44.4 | 55.9 | 146.89 ± 45.79 |
-| `mini-jc free` | 0.3 ± 0.1 | 0.1 | 1.2 | 1.00 |
+| `jc --free` | 44.3 ± 0.3 | 43.7 | 45.5 | 112.19 ± 9.90 |
+| `mini-jc free` | 0.4 ± 0.0 | 0.3 | 1.1 | 1.00 |
+
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `jc --df` | 46.8 ± 0.8 | 46.0 | 50.8 | 111.48 ± 10.33 |
+| `mini-jc df` | 0.4 ± 0.0 | 0.3 | 0.7 | 1.00 |

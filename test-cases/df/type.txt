@@ -1,0 +1,9 @@
+Filesystem     Type      1K-blocks       Used Available Use% Mounted on
+devtmpfs       devtmpfs    1638916          0   1638916   0% /dev
+tmpfs          tmpfs      16389156     100696  16288460   1% /dev/shm
+tmpfs          tmpfs       8194580       8484   8186096   1% /run
+tmpfs          tmpfs      16389156       1280  16387876   1% /run/wrappers
+/dev/nvme0n1p6 ext4      446185552  141143660 282303516  34% /
+/dev/nvme0n1p2 vfat         343724      47230    296494  14% /boot
+/dev/sda2      fuseblk  1953497084 1671464956 282032128  86% /mnt/secondary
+tmpfs          tmpfs       3277828       4968   3272860   1% /run/user/1000

@@ -5,6 +5,7 @@ fn main() {
 
     let value = match &cli_args.subcommand {
         Format::Free(c) => c.execute(),
+        Format::Df(c) => c.execute(),
     };
 
     if cli_args.pretty {
@@ -35,4 +36,5 @@ struct CliArgs {
 #[argh(subcommand)]
 enum Format {
     Free(parsers::free::FreeCommand),
+    Df(parsers::df::DfCommand),
 }

@@ -1,0 +1,9 @@
+Filesystem     Type        Inodes   IUsed     IFree IUse%  1K-blocks       Used     Avail Use% File Mounted on
+devtmpfs       devtmpfs   4095131     614   4094517    1%    1638916          0   1638916   0% -    /dev
+tmpfs          tmpfs      4097289     238   4097051    1%   16389156     100696  16288460   1% -    /dev/shm
+tmpfs          tmpfs      4097289    2469   4094820    1%    8194580       8520   8186060   1% -    /run
+tmpfs          tmpfs      4097289      23   4097266    1%   16389156       1280  16387876   1% -    /run/wrappers
+/dev/nvme0n1p6 ext4      28409856 2638039  25771817   10%  446185552  141143732 282303444  34% -    /
+/dev/nvme0n1p2 vfat             0       0         0     -     343724      47230    296494  14% -    /boot
+/dev/sda2      fuseblk  283604992  953298 282651694    1% 1953497084 1671464956 282032128  86% -    /mnt/secondary
+tmpfs          tmpfs       819457     146    819311    1%    3277828       4968   3272860   1% -    /run/user/1000
