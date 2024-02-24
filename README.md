@@ -12,7 +12,7 @@ Also I was bored.
 
 ### Using a Rust toolchain
 
-Clone the repository and run `cargo --install --path .`.
+Run `cargo install --git https://github.com/holly-hacker/mini-jc`.
 
 <!-- TODO: add nix flake -->
 
