@@ -29,13 +29,10 @@ Clone the repository and run `cargo --install --path .`.
 ## Performance
 
 <!--
-hyperfine --input test-cases/free/no-args.txt "jc --free" "target/release/mini-jc free"
+hyperfine --input test-cases/free/no-args.txt "jc --free" "target/release/mini-jc free" --export-markdown out.md && cat out.md && rm out.md
 -->
 
-```mermaid
-xychart-beta
-    title "jc vs mini-jc"
-    x-axis ["jc --free", "mini-jc free"]
-    y-axis "Runtime in ms"
-    bar [45, 0.3]
-```
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `jc --free` | 45.8 ± 1.5 | 44.4 | 55.9 | 146.89 ± 45.79 |
+| `mini-jc free` | 0.3 ± 0.1 | 0.1 | 1.2 | 1.00 |
